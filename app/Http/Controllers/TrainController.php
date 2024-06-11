@@ -11,10 +11,10 @@ class TrainController extends Controller
 
         $curDate = date('Y-m-d');
 
-        $trainsObj = Train::where('departure_day', '>', $curDate)->get();
+        $trainsObj = Train::where('departure_day', '>=', $curDate)->get();
 
-        dd($trainsObj);
+        // dd($trainsObj);
 
-        return view('home',  compact('trainsObj'));
+        return view('home', compact('trainsObj'));
     }
 }
