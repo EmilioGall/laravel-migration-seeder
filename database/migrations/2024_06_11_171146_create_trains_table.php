@@ -8,6 +8,23 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * CREATE TABLE `trains` (
+        `id` Unsigned BIGINT NOT NULL AUTO_INCREMENT,
+        `company` VARCHAR(255) NOT NULL,
+        `departure_station` VARCHAR(255) NOT NULL,
+        `arrive_station` VARCHAR(255) NOT NULL,
+        `departure_day` DATE NOT NULL,
+        `departure_time` TIME NOT NULL,
+        `arrive_day` DATE NOT NULL,
+        `arrive_time` TIME NOT NULL,
+        `train_code` TIME NOT NULL,
+        `cars_number` TIME NOT NULL,
+        `is_in_time` TIME NOT NULL,
+        `is_deleted` TIME NOT NULL,
+        `created_at` TIMESTAMP NULL,
+        `updated_at` TIMESTAMP NULL,
+        `PRIMARY KEY(`id`)
+       );
      */
     public function up(): void
     {
