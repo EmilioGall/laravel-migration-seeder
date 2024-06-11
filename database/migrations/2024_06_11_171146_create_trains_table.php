@@ -19,8 +19,8 @@ return new class extends Migration
         `arrive_time` TIME NOT NULL,
         `train_code` TIME NOT NULL,
         `cars_number` TIME NOT NULL,
-        `is_in_time` TIME NOT NULL,
-        `is_deleted` TIME NOT NULL,
+        `is_in_time` BOOLEAN DEFAULT(1),
+        `is_deleted` BOOLEAN DEFAULT(1),
         `created_at` TIMESTAMP NULL,
         `updated_at` TIMESTAMP NULL,
         `PRIMARY KEY(`id`)
