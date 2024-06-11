@@ -9,7 +9,9 @@ class TrainController extends Controller
 {
     public function index() {
 
-        $trainsObj = Train::all();
+        $curDate = date('Y-m-d');
+
+        $trainsObj = Train::where('departure_day', '>', $curDate)->get();
 
         dd($trainsObj);
 
