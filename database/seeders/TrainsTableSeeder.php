@@ -30,7 +30,7 @@ class TrainsTableSeeder extends Seeder
             $newTrain->departure_time = $faker->time();
             $newTrain->arrive_day = $faker->dateTimeThisMonth('+12 days');
             $newTrain->arrive_time = $faker->time();
-            $newTrain->train_code = substr($faker->text(5), 0, -3) . $faker->randomNumber(4, true);
+            $newTrain->train_code = strtoupper($faker->randomLetter() . $faker->randomLetter()) . $faker->randomNumber(4, true);
             $newTrain->cars_number = $faker->numberBetween(2, 6);
             $newTrain->seats_number = $faker->numberBetween(50, 280);
             $newTrain->is_in_time = $faker->boolean();

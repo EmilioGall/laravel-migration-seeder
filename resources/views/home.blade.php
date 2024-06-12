@@ -2,7 +2,6 @@
 
 @section('content')
    <main>
-
       <div class="container-fluid">
 
          <h1 class="fs-1 text-primary text-center my-3">Train List</h1>
@@ -41,8 +40,20 @@
                      <td>{{ $train->train_code }}</td>
                      <td>{{ $train->cars_number }}</td>
                      <td>{{ $train->seats_number }}</td>
-                     <td>{{ $train->is_in_time === 1 ? 'Y' : 'N' }}</td>
-                     <td>{{ $train->is_deleted === 1 ? 'Y' : 'N' }}</td>
+                     <td>
+                        @if ($train->is_in_time === 1)
+                           <i class="fa-regular fa-clock text-success"></i>
+                        @else
+                           <i class="fa-regular fa-clock text-danger"></i>
+                        @endif
+                     </td>
+                     <td>
+                        @if ($train->is_deleted === 1)
+                           <i class="fa-solid fa-square-xmark text-danger"></i>
+                        @else
+                           <span class="text-success">{{ '-' }}</span>
+                        @endif
+                     </td>
                   </tr>
                @endforeach
 
