@@ -10,6 +10,7 @@ return new class extends Migration
      * Run the migrations.
      * ALTER TABLE `trains` (
         ADD `seats_number` UNSIGNED SMALLINT NOT NULL
+        AFTER `cars_number`
        );
      */
     public function up(): void
