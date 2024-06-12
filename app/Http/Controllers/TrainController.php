@@ -7,9 +7,12 @@ use Illuminate\Http\Request;
 
 class TrainController extends Controller
 {
-    public function index() {
+    public function index()
+    {
 
         $curDate = date('Y-m-d');
+
+        // $trainsObj = Train::all();
 
         $trainsObj = Train::where('departure_day', '>=', $curDate)->get();
 

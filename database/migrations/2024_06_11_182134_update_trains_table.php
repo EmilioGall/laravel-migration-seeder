@@ -8,13 +8,16 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * ALTER TABLE `trains` (
+        ADD `seats_number` UNSIGNED SMALLINT NOT NULL
+       );
      */
     public function up(): void
     {
         Schema::table('trains', function (Blueprint $table) {
             $table->unsignedSmallInteger('seats_number')->after('cars_number');
-            // $table->time('departure_time')->change();
-            // $table->time('arrive_time')->change();
+            // $table->time('departure_time')->unsigned()->change();
+            // $table->time('arrive_time')->unsigned()->change();
         });
     }
 
