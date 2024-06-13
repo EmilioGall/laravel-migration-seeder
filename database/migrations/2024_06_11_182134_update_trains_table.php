@@ -17,8 +17,6 @@ return new class extends Migration
     {
         Schema::table('trains', function (Blueprint $table) {
             $table->unsignedSmallInteger('seats_number')->after('cars_number');
-            // $table->time('departure_time')->unsigned()->change();
-            // $table->time('arrive_time')->unsigned()->change();
         });
     }
 
